@@ -112,9 +112,9 @@ def payment():
     if total == cost:
         print(f"Payment confirmed, Making {user_input}:")
     elif total > cost:
-        change = cost - total
+        change = total - cost
         print(f"payment confirmed, Making {user_input}:")
-        print(f"Please take your change:{change}")
+        print(f"Please take your change: ${change}")
     else:
         print("Sorry insufficient amount inserted, Refund processed.")
 
