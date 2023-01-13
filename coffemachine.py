@@ -110,6 +110,7 @@ def make_coffee(selected):
 # display and process payment of coffee choice.
 def payment():
     cost = MENU[user_input]['cost']
+
     print(f"{user_input}: ${cost}")
     print("Please insert coins.")
 
@@ -127,10 +128,12 @@ def payment():
 
     if total == cost:
         print(f"Payment confirmed, Making {user_input}:")
+        resource["total"] += cost
     elif total > cost:
         change = total - cost
         print(f"payment confirmed, Making {user_input}:")
         print(f"Please take your change: ${round(change, 2)}")
+        resource["total"] += cost
     else:
         print("Sorry insufficient amount inserted, Refund processed.")
 
@@ -144,13 +147,10 @@ while machine_on:
 
     if user_input == 'espresso':
         make_coffee(user_input)
-        resource["total"] += 1.5
     elif user_input == 'latte':
         make_coffee(user_input)
-        resource["total"] += 2.5
     elif user_input == 'cappuccino':
         make_coffee(user_input)
-        resource["total"] += 3.0
     elif user_input == 'report':
         report()
     elif user_input == 'off':
