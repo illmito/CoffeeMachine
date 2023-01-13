@@ -93,21 +93,33 @@ def make_coffee(selected):
 
 # display and process payment of coffee choice.
 def payment():
-    # quarter = 0.24
-    # dime = 0.10
-    # nickle = 0.05
-    # penny = 0.01
     cost = cost = MENU[user_input]['cost']
     print(f"{user_input}: ${cost}")
     print("Please insert coins.")
 
-    quarter = input("How many Quarters?: ")
-    dime = input("How many Dimes?: ")
-    nickle = input("How many Nickles?: ")
-    penny = input("How many Pennies?: ")
+    quarter_insert = int(input("How many Quarters?: "))
+    dime_insert = int(input("How many Dimes?: "))
+    nickle_insert = int(input("How many Nickles?: "))
+    penny_insert = int(input("How many Pennies?: "))
+
+    quarters = quarter_insert * 0.25
+    dimes = dime_insert * 0.10
+    nickles = nickle_insert * 0.05
+    pennies = penny_insert * 0.01
+
+    total = (quarters + dimes + nickles + pennies)
+
+    if total == cost:
+        print(f"Payment confirmed, Making {user_input}:")
+    elif total > cost:
+        change = cost - total
+        print(f"payment confirmed, Making {user_input}:")
+        print(f"Please take your change:{change}")
+    else:
+        print("Sorry insufficient amount inserted, Refund processed.")
 
 
-
+# total amount in the machine
 monies = 0
 
 machine_on = True
