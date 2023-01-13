@@ -70,12 +70,13 @@ def make_coffee(selected):
         ingredients.append(milk)
     resource_ = resource_remain()
 
+    resource_total = MENU[selected]["ingredients"]
     # Espresso
     if user_input == 'espresso':
         if ingredients[0] <= resource_[0]:
             if ingredients[1] <= resource_[1]:
-                resource["water"] -= 50
-                resource["coffee"] -= 18
+                resource["water"] -= resource_total["water"]
+                resource["coffee"] -= resource_total["coffee"]
                 print("processing")
                 payment()
             else:
@@ -89,9 +90,9 @@ def make_coffee(selected):
             if ingredients[1] <= resource_[1]:
                 if ingredients[2] <= resource_[2]:
                     print("processing...")
-                    resource["water"] -= 200
-                    resource["coffee"] -= 24
-                    resource["milk"] -= 150
+                    resource["water"] -= resource_total["water"]
+                    resource["coffee"] -= resource_total["coffee"]
+                    resource["milk"] -= resource_total["milk"]
                     payment()
                 else:
                     print('sorry the is not enough Milk.')
@@ -106,9 +107,9 @@ def make_coffee(selected):
             if ingredients[1] <= resource_[1]:
                 if ingredients[2] <= resource_[2]:
                     print("processing...")
-                    resource["water"] -= 250
-                    resource["coffee"] -= 24
-                    resource["milk"] -= 100
+                    resource["water"] -= resource_total["water"]
+                    resource["coffee"] -= resource_total["coffee"]
+                    resource["milk"] -= resource_total["milk"]
                     payment()
                 else:
                     print('sorry the is not enough Milk.')
