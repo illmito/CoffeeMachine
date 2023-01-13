@@ -68,15 +68,15 @@ def make_coffee(selected):
         ingredients.append(water)
         ingredients.append(coffee)
         ingredients.append(milk)
-    resource_ = resource_remain()
 
-    resource_total = MENU[selected]["ingredients"]
+    machine_resources = resource_remain()
+    coffee_ingredient = MENU[selected]["ingredients"]
     # Espresso
     if user_input == 'espresso':
-        if ingredients[0] <= resource_[0]:
-            if ingredients[1] <= resource_[1]:
-                resource["water"] -= resource_total["water"]
-                resource["coffee"] -= resource_total["coffee"]
+        if ingredients[0] <= machine_resources[0]:
+            if ingredients[1] <= machine_resources[1]:
+                resource["water"] -= coffee_ingredient["water"]
+                resource["coffee"] -= coffee_ingredient["coffee"]
                 print("processing")
                 payment()
             else:
@@ -86,13 +86,13 @@ def make_coffee(selected):
 
     # Latte
     elif user_input == 'latte':
-        if ingredients[0] <= resource_[0]:
-            if ingredients[1] <= resource_[1]:
-                if ingredients[2] <= resource_[2]:
+        if ingredients[0] <= machine_resources[0]:
+            if ingredients[1] <= machine_resources[1]:
+                if ingredients[2] <= machine_resources[2]:
                     print("processing...")
-                    resource["water"] -= resource_total["water"]
-                    resource["coffee"] -= resource_total["coffee"]
-                    resource["milk"] -= resource_total["milk"]
+                    resource["water"] -= coffee_ingredient["water"]
+                    resource["coffee"] -= coffee_ingredient["coffee"]
+                    resource["milk"] -= coffee_ingredient["milk"]
                     payment()
                 else:
                     print('sorry the is not enough Milk.')
@@ -103,13 +103,13 @@ def make_coffee(selected):
 
     # Cappuccino
     elif user_input == 'cappuccino':
-        if ingredients[0] <= resource_[0]:
-            if ingredients[1] <= resource_[1]:
-                if ingredients[2] <= resource_[2]:
+        if ingredients[0] <= machine_resources[0]:
+            if ingredients[1] <= machine_resources[1]:
+                if ingredients[2] <= machine_resources[2]:
                     print("processing...")
-                    resource["water"] -= resource_total["water"]
-                    resource["coffee"] -= resource_total["coffee"]
-                    resource["milk"] -= resource_total["milk"]
+                    resource["water"] -= coffee_ingredient["water"]
+                    resource["coffee"] -= coffee_ingredient["coffee"]
+                    resource["milk"] -= coffee_ingredient["milk"]
                     payment()
                 else:
                     print('sorry the is not enough Milk.')
