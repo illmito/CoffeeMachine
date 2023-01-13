@@ -35,7 +35,7 @@ def report():
     for key, value in resource.items():
         coffee_resources = resource
         print(f"{key}: {value}ml")
-    print(f"total monies: ${monies}")
+    print(f"total monies: ${float(monies)}")
 
 
 # check resources / compare to make coffee.
@@ -111,10 +111,14 @@ def payment():
 
     if total == cost:
         print(f"Payment confirmed, Making {user_input}:")
+        cost += monies
+        print(total)
+        print(monies)
     elif total > cost:
         change = total - cost
         print(f"payment confirmed, Making {user_input}:")
         print(f"Please take your change: ${change}")
+        total += monies
     else:
         print("Sorry insufficient amount inserted, Refund processed.")
 
