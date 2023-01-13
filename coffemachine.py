@@ -138,6 +138,7 @@ def payment():
 # total amount in the machine
 
 machine_on = True
+
 while machine_on:
     user_input = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
@@ -158,4 +159,3 @@ while machine_on:
         print("off")
     else:
         print(user_input)
-
