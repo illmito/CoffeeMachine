@@ -30,8 +30,10 @@ resource = {
     "milk": 200,
 }
 
+
 # print report of all resources in machine when "report' input.
 def report():
+    monies = 0.0
     for key, value in resource.items():
         coffee_resources = resource
         print(f"{key}: {value}ml")
@@ -48,6 +50,7 @@ def resource_remain():
     coffee_resources.append(coffee)
     coffee_resources.append(milk)
     return coffee_resources
+
 
 # checks resources needed to make the coffee.
 def make_coffee(selected):
@@ -91,6 +94,7 @@ def make_coffee(selected):
         else:
             print('sorry the is not enough water.')
 
+
 # display and process payment of coffee choice.
 def payment():
     cost = cost = MENU[user_input]['cost']
@@ -108,25 +112,24 @@ def payment():
     pennies = penny_insert * 0.01
 
     total = (quarters + dimes + nickles + pennies)
-
+    money = 0.0
     if total == cost:
         print(f"Payment confirmed, Making {user_input}:")
+        money += cost
     elif total > cost:
         change = total - cost
         print(f"payment confirmed, Making {user_input}:")
         print(f"Please take your change: ${round(change, 2)}")
-        
     else:
         print("Sorry insufficient amount inserted, Refund processed.")
 
 
 # total amount in the machine
-monies = 0.0
+total_in_machine = 0
 
 machine_on = True
 while machine_on:
     user_input = input("What would you like? (espresso/latte/cappuccino): ").lower()
-
 
     if user_input == 'espresso':
         make_coffee(user_input)
