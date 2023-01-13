@@ -40,18 +40,6 @@ def report():
         print(f"{key}: {value}")
 
 
-# check resources / compare to make coffee.
-def resource_remain():
-    coffee_resources = []
-    water = resource['water']
-    milk = resource['milk']
-    coffee = resource['coffee']
-    coffee_resources.append(water)
-    coffee_resources.append(coffee)
-    coffee_resources.append(milk)
-    return coffee_resources
-
-
 # checks resources needed to make the coffee.
 def make_coffee(selected):
     selected = user_input
@@ -69,7 +57,6 @@ def make_coffee(selected):
         ingredients.append(coffee)
         ingredients.append(milk)
 
-    machine_resources = resource_remain()
     coffee_ingredient = MENU[selected]["ingredients"]
 
     # Espresso
