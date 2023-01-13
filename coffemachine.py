@@ -111,18 +111,18 @@ def payment():
 
     if total == cost:
         print(f"Payment confirmed, Making {user_input}:")
-        return total
+        
     elif total > cost:
         change = total - cost
         print(f"payment confirmed, Making {user_input}:")
         print(f"Please take your change: ${round(change, 2)}")
-        return total
+        
     else:
         print("Sorry insufficient amount inserted, Refund processed.")
 
 
 # total amount in the machine
-
+monies = 0.0
 
 machine_on = True
 while machine_on:
