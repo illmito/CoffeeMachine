@@ -124,10 +124,9 @@ def payment():
     pennies = penny_insert * 0.01
 
     total = (quarters + dimes + nickles + pennies)
-    money = 0.0
+
     if total == cost:
         print(f"Payment confirmed, Making {user_input}:")
-        money += cost
     elif total > cost:
         change = total - cost
         print(f"payment confirmed, Making {user_input}:")
