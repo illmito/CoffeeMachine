@@ -93,14 +93,18 @@ def make_coffee(selected):
 
 # display and process payment of coffee choice.
 def payment():
-    quarter = 0.25
-    dime = 0.10
-    nickle = 0.05
-    penny = 0.01
-
+    # quarter = 0.24
+    # dime = 0.10
+    # nickle = 0.05
+    # penny = 0.01
     cost = cost = MENU[user_input]['cost']
-    print(f"{user_input} comes to ${cost}")
+    print(f"{user_input}: ${cost}")
+    print("Please insert coins.")
 
+    quarter = input("How many Quarters?: ")
+    dime = input("How many Dimes?: ")
+    nickle = input("How many Nickles?: ")
+    penny = input("How many Pennies?: ")
 
 
 
