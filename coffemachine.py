@@ -74,8 +74,8 @@ def make_coffee(selected):
 
     # Espresso
     if user_input == 'espresso':
-        if ingredients[0] <= machine_resources[0]:
-            if ingredients[1] <= machine_resources[1]:
+        if coffee_ingredient["water"] <= resource["water"]:
+            if coffee_ingredient["coffee"] <= resource["coffee"]:
                 resource["water"] -= coffee_ingredient["water"]
                 resource["coffee"] -= coffee_ingredient["coffee"]
                 print("processing")
@@ -87,9 +87,9 @@ def make_coffee(selected):
 
     # Latte
     elif user_input == 'latte':
-        if ingredients[0] <= machine_resources[0]:
-            if ingredients[1] <= machine_resources[1]:
-                if ingredients[2] <= machine_resources[2]:
+        if coffee_ingredient["water"] <= resource["water"]:
+            if coffee_ingredient["coffee"] <= resource["coffee"]:
+                if coffee_ingredient["milk"] <= resource["milk"]:
                     print("processing...")
                     resource["water"] -= coffee_ingredient["water"]
                     resource["coffee"] -= coffee_ingredient["coffee"]
@@ -104,9 +104,9 @@ def make_coffee(selected):
 
     # Cappuccino
     elif user_input == 'cappuccino':
-        if ingredients[0] <= machine_resources[0]:
-            if ingredients[1] <= machine_resources[1]:
-                if ingredients[2] <= machine_resources[2]:
+        if coffee_ingredient["water"] <= resource["water"]:
+            if coffee_ingredient["coffee"] <= resource["coffee"]:
+                if coffee_ingredient["milk"] <= resource["milk"]:
                     print("processing...")
                     resource["water"] -= coffee_ingredient["water"]
                     resource["coffee"] -= coffee_ingredient["coffee"]
