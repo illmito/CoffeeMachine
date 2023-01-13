@@ -35,7 +35,6 @@ def report():
     for key, value in resource.items():
         coffee_resources = resource
         print(f"{key}: {value}ml")
-    print(f"total monies: ${float(monies)}")
 
 
 # check resources / compare to make coffee.
@@ -91,37 +90,11 @@ def make_coffee(selected):
         else:
             print('sorry the is not enough water.')
 
-# display and process payment of coffee choice.
+# display payment of coffee choice.
 def payment():
     cost = cost = MENU[user_input]['cost']
-    print(f"{user_input}: ${cost}")
-    print("Please insert coins.")
+    print(f"{user_input} comes to ${cost}")
 
-    quarter_insert = int(input("How many Quarters?: "))
-    dime_insert = int(input("How many Dimes?: "))
-    nickle_insert = int(input("How many Nickles?: "))
-    penny_insert = int(input("How many Pennies?: "))
-
-    quarters = quarter_insert * 0.25
-    dimes = dime_insert * 0.10
-    nickles = nickle_insert * 0.05
-    pennies = penny_insert * 0.01
-
-    total = (quarters + dimes + nickles + pennies)
-
-    if total == cost:
-        print(f"Payment confirmed, Making {user_input}:")
-    elif total > cost:
-        change = total - cost
-        print(f"payment confirmed, Making {user_input}:")
-        print(f"Please take your change: ${round(change, 2)}")
-        
-    else:
-        print("Sorry insufficient amount inserted, Refund processed.")
-
-
-# total amount in the machine
-monies = 0.0
 
 machine_on = True
 while machine_on:
@@ -140,5 +113,3 @@ while machine_on:
         machine_on = False
         print("Turning off...")
         print("off")
-    else:
-        print(user_input)
