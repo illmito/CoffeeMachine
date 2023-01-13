@@ -93,6 +93,11 @@ def make_coffee(selected):
 
 # display payment of coffee choice.
 def payment():
+    quarter = 0.25
+    dime = 0.10
+    nickle = 0.05
+    penny = 0.01
+
     cost = cost = MENU[user_input]['cost']
     print(f"{user_input} comes to ${cost}")
 
