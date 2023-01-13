@@ -28,16 +28,16 @@ resource = {
     "water": 300,
     "coffee": 100,
     "milk": 200,
+    "total": 0
 }
 
 
 # print report of all resources in machine when "report' input.
 def report():
-    monies = 0.0
+    monies = resource['total']
     for key, value in resource.items():
         coffee_resources = resource
-        print(f"{key}: {value}ml")
-    print(f"total monies: ${float(monies)}")
+        print(f"{key}: {value}")
 
 
 # check resources / compare to make coffee.
@@ -56,7 +56,6 @@ def resource_remain():
 def make_coffee(selected):
     selected = user_input
     ingredients = []
-    cost = MENU[selected]['cost']
     if selected == 'espresso':
         water = MENU[selected]['ingredients']['water']
         coffee = MENU[selected]['ingredients']['coffee']
@@ -97,7 +96,7 @@ def make_coffee(selected):
 
 # display and process payment of coffee choice.
 def payment():
-    cost = cost = MENU[user_input]['cost']
+    cost = MENU[user_input]['cost']
     print(f"{user_input}: ${cost}")
     print("Please insert coins.")
 
@@ -125,7 +124,6 @@ def payment():
 
 
 # total amount in the machine
-total_in_machine = 0
 
 machine_on = True
 while machine_on:
@@ -133,10 +131,13 @@ while machine_on:
 
     if user_input == 'espresso':
         make_coffee(user_input)
+        resource["total"] += 1.5
     elif user_input == 'latte':
         make_coffee(user_input)
+        resource["total"] += 2.5
     elif user_input == 'cappuccino':
         make_coffee(user_input)
+        resource["total"] += 3.0
     elif user_input == 'report':
         report()
     elif user_input == 'off':
@@ -145,3 +146,4 @@ while machine_on:
         print("off")
     else:
         print(user_input)
+
