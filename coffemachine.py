@@ -42,20 +42,6 @@ def report():
 
 # checks resources needed to make the coffee.
 def make_coffee(selected):
-    selected = user_input
-    ingredients = []
-    if selected == 'espresso':
-        water = MENU[selected]['ingredients']['water']
-        coffee = MENU[selected]['ingredients']['coffee']
-        ingredients.append(water)
-        ingredients.append(coffee)
-    else:
-        water = MENU[selected]['ingredients']['water']
-        milk = MENU[selected]['ingredients']['milk']
-        coffee = MENU[selected]['ingredients']['coffee']
-        ingredients.append(water)
-        ingredients.append(coffee)
-        ingredients.append(milk)
 
     coffee_ingredient = MENU[selected]["ingredients"]
 
