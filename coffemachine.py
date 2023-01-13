@@ -71,6 +71,7 @@ def make_coffee(selected):
 
     machine_resources = resource_remain()
     coffee_ingredient = MENU[selected]["ingredients"]
+
     # Espresso
     if user_input == 'espresso':
         if ingredients[0] <= machine_resources[0]:
