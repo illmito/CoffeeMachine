@@ -91,7 +91,7 @@ def make_coffee(selected):
         else:
             print('sorry the is not enough water.')
 
-# display payment of coffee choice.
+# display and process payment of coffee choice.
 def payment():
     quarter = 0.25
     dime = 0.10
