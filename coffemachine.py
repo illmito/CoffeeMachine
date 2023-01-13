@@ -35,6 +35,7 @@ def report():
     for key, value in resource.items():
         coffee_resources = resource
         print(f"{key}: {value}ml")
+    print(f"total monies: ${monies}")
 
 
 # check resources / compare to make coffee.
@@ -96,6 +97,10 @@ def payment():
     print(f"{user_input} comes to ${cost}")
 
 
+
+
+monies = 0
+
 machine_on = True
 while machine_on:
     user_input = input("What would you like? (espresso/latte/cappuccino): ").lower()
@@ -113,3 +118,5 @@ while machine_on:
         machine_on = False
         print("Turning off...")
         print("off")
+    else:
+        print(user_input)
