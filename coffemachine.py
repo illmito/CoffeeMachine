@@ -92,6 +92,10 @@ def make_coffee(selected):
         else:
             print('sorry the is not enough water.')
 
+    print("_____________")
+    print(f"Enjoy your {user_input}\n")
+
+
 
 # display and process payment of coffee choice.
 def payment():
@@ -104,6 +108,7 @@ def payment():
     dime_insert = int(input("How many Dimes?: "))
     nickle_insert = int(input("How many Nickles?: "))
     penny_insert = int(input("How many Pennies?: "))
+    print("__________")
 
     quarters = quarter_insert * 0.25
     dimes = dime_insert * 0.10
@@ -117,8 +122,8 @@ def payment():
         resource["total"] += cost
     elif total > cost:
         change = total - cost
-        print(f"payment confirmed, Making {user_input}:")
         print(f"Please take your change: ${round(change, 2)}")
+        print(f"Payment confirmed, Making {user_input}:")
         resource["total"] += cost
     else:
         print("Sorry insufficient amount inserted, Refund processed.")
